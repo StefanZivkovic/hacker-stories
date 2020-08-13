@@ -5,6 +5,8 @@ import storiesReducer from './features/reducer';
 import InputWithLabel from './features/InputWithLabel';
 import axios from 'axios';
 
+import './App.css';
+
 localStorage.removeItem('search');
 const API_ENDPOINT = 'https://hn.algolia.com/api/v1/search?query=';
 
@@ -58,8 +60,8 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>My Hacker Stories</h1>
+    <div className='container'>
+      <h1 className='headline-primary'>My Hacker Stories</h1>
       <form
         onSubmit={(e) => {
           setURL(`${API_ENDPOINT}${searchTerm}`);
