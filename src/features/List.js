@@ -1,7 +1,8 @@
 import React from "react";
+import styles from "../App.module.css";
 
 const Item = ({ item, onRemoveItem }) => (
-  <div className="item" key={item.objectID}>
+  <div className={styles.item} key={item.objectID}>
     <span style={{ width: "40%" }}>
       <a href={item.url}>{item.title}</a>
     </span>
@@ -11,7 +12,7 @@ const Item = ({ item, onRemoveItem }) => (
     <span style={{ width: "10%" }}>{item.points}</span>&nbsp;
     <span style={{ width: "10%" }}>
       <button
-        className="button button_small"
+        className={`${styles.button} ${styles.buttonSmall}`}
         type="button"
         onClick={() => onRemoveItem(item)}
       >

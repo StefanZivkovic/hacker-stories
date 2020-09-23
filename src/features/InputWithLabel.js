@@ -1,5 +1,7 @@
 import React from "react";
 
+import styles from "../App.module.css";
+
 const InputWithLabel = ({
   id,
   type = "text",
@@ -18,11 +20,11 @@ const InputWithLabel = ({
 
   return (
     <>
-      <label htmlFor={id} className="label">
+      <label htmlFor={id} className={styles.label}>
         {children}
       </label>
       <input
-        className="input"
+        className={styles.input}
         ref={inputRef}
         id={id}
         type={type}

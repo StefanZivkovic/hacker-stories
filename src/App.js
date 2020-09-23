@@ -5,7 +5,7 @@ import storiesReducer from "./features/reducer";
 import InputWithLabel from "./features/InputWithLabel";
 import axios from "axios";
 
-import "./App.css";
+import styles from "./App.module.css";
 
 localStorage.removeItem("search");
 const API_ENDPOINT = "https://hn.algolia.com/api/v1/search?query=";
@@ -60,10 +60,10 @@ const App = () => {
   };
 
   return (
-    <div className="container">
-      <h1 className="headline-primary">My Hacker Stories</h1>
+    <div className={styles.container}>
+      <h1 className={styles.headlinePrimary}>My Hacker Stories</h1>
       <form
-        className="search-form"
+        className={styles.searchForm}
         onSubmit={(e) => {
           setURL(`${API_ENDPOINT}${searchTerm}`);
           e.preventDefault();
@@ -80,7 +80,7 @@ const App = () => {
         <button
           type="submit"
           disabled={!searchTerm}
-          className="button button_large"
+          className={`${styles.button} ${styles.buttonLarge}`}
         >
           Search
         </button>
