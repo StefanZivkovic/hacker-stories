@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const InputWithLabel = ({
   id,
-  type = 'text',
+  type = "text",
   value,
   onInputChange,
   autoFocus,
@@ -18,8 +18,11 @@ const InputWithLabel = ({
 
   return (
     <>
-      <label htmlFor={id}>{children}</label>
+      <label htmlFor={id} className="label">
+        {children}
+      </label>
       <input
+        className="input"
         ref={inputRef}
         id={id}
         type={type}
